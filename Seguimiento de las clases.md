@@ -108,7 +108,7 @@
 **Permisos especiales SUID y SGID**
 	<span style="color:rgb(255, 0, 0)">which</span> comando para ver la ruta absoluta de algún binario o programa. 
 	<span style="color:rgb(255, 0, 0)">xargs</span> Manera de poder realizar dos comandos de manera paralela o al mismo tiempo. Se coloca después del comando colocando un | y luego xargs, después de eso se coloca el comando que quieres ejecutar paralelamente. 
-	<span style="color:rgb(255, 0, 0)">suid</span> Es la manera de poder correr un programa como el propietario del archivo. 
+	<span style="color:rgb(255, 0, 0)">SUID</span> Es la manera de poder correr un programa como el propietario del archivo. 
 	![[Pasted image 20230814204549.png]]
 	<span style="color:rgb(255, 0, 0)">SGID</span> Es la manera de entrar a un directorio como si hiciéramos parte del grupo al que pertenece el directorio. 
 	 ![[Pasted image 20230814204506.png]]
@@ -123,33 +123,33 @@
 <span style="color:rgb(0, 112, 192)">Directorios</span>
 	*<span style="color:rgb(255, 0, 0)">bin</span>* Almacena los ejecutables de usuario. 
 	*<span style="color:rgb(255, 0, 0)">Sbin</span>* hace lo mismo pero para tareas del sistema operativo.
-	*boot* Directorio estatico que contiene todos los archivos necesarios para arrancar el sistema. Aquí se encuentra el gestor de arranque *GRUB.*
-	*dev* Todos los dispositivos de almacenamiento en forma de archivo. Para que el sistema pueda entenderlos como sistema de almacenamiento. 
-	*etc* Archivos de configuración del sistema operativo como tal, como los programas instalados después. No debe contener preferiblemente binarios. 
-	*home* Directorios de los usuarios estándar.
-	*lib* Contiene todas las librerías necesarias para correr todas las aplicaciones que tiene el sistema montadas. 
-	*lib64* Contiene también las líberias para aplicaciones de 64 bits. 
-	*media* El punto de montaje de todos los volúmenes lógicos que se montan. (Disco duro, etc)
-	*opt* Contiene archivos de programas autocontenidos, como la carpeta archivos x86 de windows. 
-	*proc* Procesos y aplicaciones que se están ejecutando en el sistema. Este directorio no guarda nada, debido a que son archivos virtuales, por lo que el contenido de este directorio es nulo. Contiene listas que se generan al momento de acceder a ellos. 
-	*root* Este es la carpeta del usuario root. Esta esta en su propia carpeta desde la raíz del sistema operativo.
-	*srv* Almacenar archivos de directorios relativos que estén en un servidor instalado en tu sistema.
-	*sys* Archivos virtuales de eventos del sistema operativo. Estos se distribuyen de manera jerárquica. 
-	*tmp* Almacena archivos temporales del sistema o aplicaciones que estén corriendo. Este esta diseñado para almacenar archivos de corta duración, y cada vez que se reinicia la maquina se borra el contenido de este directorio.
-	*usr* Archivos de solo lectura incluyendo todos los paquetes del software instalados en el sistema. User System Resourses. En este directorio se almacena por lo tanto todos los recursos del usuario que están instalados en el sistema.
-	*var* Actua como un registro del sistema. Contiene almacenados los registros del sistema, los correos, logs, información almacenada en la cache, bases de datos. 
+	<span style="color:rgb(255, 0, 0)">boot</span> Directorio estático que contiene todos los archivos necesarios para arrancar el sistema. Aquí se encuentra el gestor de arranque *GRUB.*
+	<span style="color:rgb(255, 0, 0)">dev</span> Todos los dispositivos de almacenamiento en forma de archivo. Para que el sistema pueda entenderlos como sistema de almacenamiento. 
+	<span style="color:rgb(255, 0, 0)">etc</span> Archivos de configuración del sistema operativo como tal, como los programas instalados después. No debe contener preferiblemente binarios. 
+	<span style="color:rgb(255, 0, 0)">home</span> Directorios de los usuarios estándar.
+	<span style="color:rgb(255, 0, 0)">lib</span> Contiene todas las librerías necesarias para correr todas las aplicaciones que tiene el sistema montadas. 
+	<span style="color:rgb(255, 0, 0)">lib64</span> Contiene también las líberas para aplicaciones de 64 bits. 
+	<span style="color:rgb(255, 0, 0)">media</span> El punto de montaje de todos los volúmenes lógicos que se montan. (Disco duro, etc)
+	<span style="color:rgb(255, 0, 0)">opt</span> Contiene archivos de programas autocontenidos, como la carpeta archivos x86 de Windows. 
+	<span style="color:rgb(255, 0, 0)">proc</span> Procesos y aplicaciones que se están ejecutando en el sistema. Este directorio no guarda nada, debido a que son archivos virtuales, por lo que el contenido de este directorio es nulo. Contiene listas que se generan al momento de acceder a ellos. 
+	<span style="color:rgb(255, 0, 0)">root</span> Este es la carpeta del usuario root. Esta esta en su propia carpeta desde la raíz del sistema operativo.
+	<span style="color:rgb(255, 0, 0)">srv</span> Almacenar archivos de directorios relativos que estén en un servidor instalado en tu sistema.
+	<span style="color:rgb(255, 0, 0)">sys</span> Archivos virtuales de eventos del sistema operativo. Estos se distribuyen de manera jerárquica. 
+	<span style="color:rgb(255, 0, 0)">tmp</span> Almacena archivos temporales del sistema o aplicaciones que estén corriendo. Este esta diseñado para almacenar archivos de corta duración, y cada vez que se reinicia la maquina se borra el contenido de este directorio.
+	<span style="color:rgb(255, 0, 0)">usr</span> Archivos de solo lectura incluyendo todos los paquetes del software instalados en el sistema. User System Resourses. En este directorio se almacena por lo tanto todos los recursos del usuario que están instalados en el sistema.
+	<span style="color:rgb(255, 0, 0)">var</span> Actúa como un registro del sistema. Contiene almacenados los registros del sistema, los correos, logs, información almacenada en la cache, bases de datos. 
 <span style="color:rgb(0, 112, 192)">Uso de tmux</span>
-	*ctrl + b + ,* = renombrar ventana.
-	*ctrl + b + shift + "* = crea nuevo panel horizontalmente.
-	*ctrl + b +shift + %* = crea un nuevo panel verticalmente. 
-	*ctrl + b + o* = cambia entre paneles. 
-	*ctrl + b + x* = cerrar un panel. 
-	*ctrl + b + $* = cambiar el nombre de la sesión tmux.
-	*ctrl + b + 1* = cambiar de ventana de la sesión. (dependiendo de las ventanas que hayan abiertas)
-	*ctrl + -* = disminuir el tamaño de la letra de la Shell.
-	*ctrl + +* = aumentar el tamaño de la letra de la Shell.
-	*ctrl + b + m* = cambiar al modo mouse.
-	*ctrl + b + w* = cambiar al modo directory (para ver todas las sesiones y ventanas que hay activas).
+	<span style="color:rgb(255, 0, 0)">ctrl + b + ,</span> = renombrar ventana.
+	<span style="color:rgb(255, 0, 0)">ctrl + b + shift + "</span> = crea nuevo panel horizontalmente.
+	<span style="color:rgb(255, 0, 0)">ctrl + b +shift + %</span> = crea un nuevo panel verticalmente. 
+	<span style="color:rgb(255, 0, 0)">ctrl + b + o</span> = cambia entre paneles. 
+	<span style="color:rgb(255, 0, 0)">ctrl + b + x</span> = cerrar un panel. 
+	<span style="color:rgb(255, 0, 0)">ctrl + b + $</span> = cambiar el nombre de la sesión tmux.
+	<span style="color:rgb(255, 0, 0)">ctrl + b + 1</span> = cambiar de ventana de la sesión. (dependiendo de las ventanas que hayan abiertas)
+	<span style="color:rgb(255, 0, 0)">ctrl + -</span> = disminuir el tamaño de la letra de la Shell.
+	<span style="color:rgb(255, 0, 0)">ctrl + +</span> = aumentar el tamaño de la letra de la Shell.
+	<span style="color:rgb(255, 0, 0)">ctrl + b + m</span> = cambiar al modo mouse.
+	<span style="color:rgb(255, 0, 0)">ctrl + b + w</span> = cambiar al modo directory (para ver todas las sesiones y ventanas que hay activas).
 <span style="color:rgb(0, 112, 192)">Dumpeos hexadecimales en archivos y descompresión de archivos continuamente comprimidos</span>
 	Se copia el contendió del del archivo que contiene el dumpeo hexadecimal:
 	![[Pasted image 20241013174805.png]]
@@ -207,7 +207,7 @@ Esto nos dará el ultimo archivo descomprimido el cual contiene la contraseña d
 <span style="color:rgb(255, 0, 0)">cat /proc/net/tcp</span> Este archivo almacena un listado de los puertos en hexadecimal.
 
 ---
-<span style="color:rgb(0, 112, 192)">Uso del comando netcat (nc)</span>
+<span style="color:rgb(0, 112, 192)">Uso del comando netcat (nc) para conexiones</span>
 <span style="color:rgb(255, 0, 0)">nc ipoConexión puerto</span> Este comando nos permite conectarnos a maquinas tanto remotas como locales por el puerto especifico que se deseé. Ejemplo:
 ![[Pasted image 20240728135426.png]]
 Posteriormente si se proporciona la contraseña se podrá acceder a dicha maquina. 
@@ -265,5 +265,41 @@ Posteriormente usaremos netcat con la opción de usar ssl para conectarnos a los
 <span style="color:rgb(0, 112, 192)">Decimal a hexadecimal</span>
 Aquí hay un ejemplo de como convertir una lista de palabras de hexadecimal a decimal.
 ![[Pasted image 20240728143649.png]]
+
+---
+
+<span style="color:rgb(0, 112, 192)">Ejecución de comandos a través de conexiones ssh</span> 
+ssh user@lugarDondeConectarse <span style="color:rgb(255, 0, 0)">comando</span> 
+![[Pasted image 20250117002935.png]]
+<span style="color:rgb(255, 0, 0)">Explicación:</span>
+	- Después de todo el comando que comprende el ssh que es después del -p (especificación de puerto) esta el comando a ejecutar posteriormente se realice la conexión ( <span style="color:rgb(255, 0, 0)">whoami</span> ) por lo que posteriormente vemos por consola el output del comando ( <span style="color:rgb(255, 0, 0)">bandit18</span> )
+	- Esta es una manera en la cual puedes realizar alguna acción previamente a la interpretación de los archivos de configuración del equipo en cuestión. <span style="color:rgb(255, 192, 0)">Esto no burla la seguridad del equipo o servidor, se debe poder conectar para realizar el cambio o ejecutar el comando.</span> 
+
+---
+<span style="color:rgb(0, 112, 192)">Abusando de privilegio SUID para migrar de usuario</span>
+![[Pasted image 20250117004117.png]]
+<span style="color:rgb(255, 0, 0)">Explicación:</span>
+	- Al listar los permisos que tenemos con el archivo, nos damos cuenta que podemos ejecutar el ejecutable como otro usuario, esto porque contiene la <span style="color:rgb(255, 0, 0)">"s"</span> en vez de la <span style="color:rgb(255, 0, 0)">"x"</span> en la parte de ejecución. 
+	- Al ejecutar este binario de forma normal ( <span style="color:rgb(255, 0, 0)">./</span> )ejecutaremos comandos como el usuario propietario del binario, en este caso el usuario <span style="color:rgb(255, 0, 0)">bandit20.</span> 
+ <span style="color:rgb(255, 192, 0)">Espawn de una bash atendiendo al privilegio SUID</span>
+	![[Pasted image 20250117010035.png]]
+	<span style="color:rgb(255, 0, 0)">Explicación:</span>
+	- Para lanzar una bash atendiendo al privilegio que tenemos de SUID requerimos de usar el parámetro <span style="color:rgb(255, 0, 0)">-p</span> , sin el, no usará el privilegio anterior. 
+
+---
+<span style="color:rgb(0, 112, 192)">Uso de nc para apertura de puertos en modo escucha</span>
+![[Pasted image 20250117013420.png]]
+Este comando nos permite abrir un puerto especifico para conexiones con algunas especificaciones:
+<span style="color:rgb(255, 0, 0)">Explicación:</span>
+	![[Pasted image 20250117013530.png]]
+	- <span style="color:rgb(255, 0, 0)">Parámetros de netcat:</span> 
+	- <span style="color:rgb(255, 0, 0)">n</span> Solo permite conexiones con ip, no con DNS, quitando así la resolución DNS.
+	- <span style="color:rgb(255, 0, 0)">l</span> Nos permite realizar una apertura de un puerto con el modo listener o escucha.
+	- <span style="color:rgb(255, 0, 0)">v</span> Este es el modo Verbose, el cual nos muestra por consola todo lo que suceda de manera descriptiva.
+	- <span style="color:rgb(255, 0, 0)">p</span> Nos permite especificarle el puerto que queremos abrir. 
+	- <span style="color:rgb(255, 0, 0)">h</span> Nos permite ver el panel de ayuda del comando. (Funciona con todos los comandos de Linux).
+
+---
+<span style="color:rgb(0, 112, 192)">Abusando de tareas Cron [1-3]</span>
 
 
