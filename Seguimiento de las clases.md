@@ -150,6 +150,8 @@
 	<span style="color:rgb(255, 0, 0)">ctrl + +</span> = aumentar el tamaño de la letra de la Shell.
 	<span style="color:rgb(255, 0, 0)">ctrl + b + m</span> = cambiar al modo mouse.
 	<span style="color:rgb(255, 0, 0)">ctrl + b + w</span> = cambiar al modo directory (para ver todas las sesiones y ventanas que hay activas).
+	<span style="color:rgb(255, 0, 0)">ctrl + b + ctrl (mantenido) + flechas hacia donde se quiera mover</span> = Redimensionar el panel de la terminal.
+	<span style="color:rgb(255, 0, 0)">ctrl + b + ctrl (mantenido) + letra o</span> = Dar enfoque en un panel que se tenga o intercambiar entre paneles que se tengan. 
 <span style="color:rgb(0, 112, 192)">Dumpeos hexadecimales en archivos y descompresión de archivos continuamente comprimidos</span>
 	Se copia el contendió del del archivo que contiene el dumpeo hexadecimal:
 	![[Pasted image 20241013174805.png]]
@@ -285,6 +287,7 @@ ssh user@lugarDondeConectarse <span style="color:rgb(255, 0, 0)">comando</span>
 	![[Pasted image 20250117010035.png]]
 	<span style="color:rgb(255, 0, 0)">Explicación:</span>
 	- Para lanzar una bash atendiendo al privilegio que tenemos de SUID requerimos de usar el parámetro <span style="color:rgb(255, 0, 0)">-p</span> , sin el, no usará el privilegio anterior. 
+	- <span style="color:rgb(255, 0, 0)">-p</span> se coloca para que bash atienda a los privilegios que tiene el binario que se desea ejecutar. Esta es una funcionalidad de bash llamada "preserve Privileges"
 
 ---
 <span style="color:rgb(0, 112, 192)">Uso de nc para apertura de puertos en modo escucha</span>
@@ -302,4 +305,22 @@ Este comando nos permite abrir un puerto especifico para conexiones con algunas 
 ---
 <span style="color:rgb(0, 112, 192)">Abusando de tareas Cron [1-3]</span>
 
+
+
+---
+<span style="color:rgb(0, 112, 192)">Escape del contexto de un comando</span> 
+Se realiza un rezise de la shell con el fin de abrir el modo de visualización no completa como lo ofrece un comando como more: 
+![[Pasted image 20250119231836.png]]
+Con este modo es posible realizar la apertura de una línea de comando para escapar del contexto de un comando y ejecutar una consola interactiva: 
+<span style="color:rgb(255, 192, 0)">Pasos y short cuts para escapar del contexto de un comando: </span>
+	- <span style="color:rgb(255, 0, 0)">dentro del modo more</span> presionar la <span style="color:rgb(255, 0, 0)">"v"</span> con el fin de pasar al modo <span style="color:rgb(255, 0, 0)">"visual"</span>:
+	![[Pasted image 20250119233202.png]]
+	- Presionar ahora la tecla <span style="color:rgb(255, 0, 0)">Esc</span> (Escape) y posteriormente: <span style="color:rgb(255, 0, 0)">Shift + :</span> para poder abrir la línea de comando necesaria:
+	![[Pasted image 20250119233540.png]]
+	- Seteraremos una variable con el valor de la la ruta absoluta donde se ejecuta la bash: <span style="color:rgb(255, 0, 0)">set shell=/bin/bash</span> y daremos <span style="color:rgb(255, 0, 0)">enter</span> 
+	- Posteriormente debemos presionar de nuevo la tecla <span style="color:rgb(255, 0, 0)">Esc</span> (Escape) y posteriormente <span style="color:rgb(255, 0, 0)">Shift + :</span> para poder abrir la línea de comando de nuevo, dentro de la cual ejecutaremos la variable que seteamos anteriormente: Escribimos <span style="color:rgb(255, 0, 0)">shell</span> y damos <span style="color:rgb(255, 0, 0)">enter</span>: 	![[Pasted image 20250119234136.png]]
+
+---
+<span style="color:rgb(0, 112, 192)">Uso del comando git para clonar repositorios especificando puerto en la URL</span>
+git clone ssh://bandit27-git@localhost <span style="color:rgb(255, 0, 0)">:2220</span> /home/bandit27-git/repo (Todo pegado) Esto nos permitirá descargar el repositorio desde el puerto que deseamos que se conecte.
 
