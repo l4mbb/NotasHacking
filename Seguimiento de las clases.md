@@ -324,3 +324,22 @@ Con este modo es posible realizar la apertura de una línea de comando para esca
 <span style="color:rgb(0, 112, 192)">Uso del comando git para clonar repositorios especificando puerto en la URL</span>
 git clone ssh://bandit27-git@localhost <span style="color:rgb(255, 0, 0)">:2220</span> /home/bandit27-git/repo (Todo pegado) Esto nos permitirá descargar el repositorio desde el puerto que deseamos que se conecte.
 
+---
+<span style="color:rgb(0, 112, 192)">Uso del parametro show y log para la revisión del historial de commits de un proyecto</span> 
+Estos comandos nos permiten visualizar cambios que se hayan realizado a un proyecto en los diferentes commits realizados a lo largo del proyecto y de la rama en cuestión:
+<span style="color:rgb(255, 192, 0)">Uso de los parametros:</span>
+	<span style="color:rgb(255, 0, 0)">git log</span> nos permite la visualización de los identificadores de los diferentes commits:
+		![[Pasted image 20250121225116.png]]
+	<span style="color:rgb(255, 0, 0)">git show</span> + (id del commit que se desea analizar) nos permite visualizar los cambios realizados al proyecto en el commit especificado en el id:
+		![[Pasted image 20250121225340.png]]
+		
+---
+<span style="color:rgb(0, 112, 192)">Uso del parametro branch y checkout para cambio de ramas en un proyecto git</span> 
+Estos comandos nos permiten ver las ramas de un proyecto, y también nos permiten migrar entre ellas:
+<span style="color:rgb(255, 192, 0)">Uso de los parametros:</span>
+	<span style="color:rgb(255, 0, 0)">git branch</span> nos permite visualizar la rama en la que estamos del proyecto:
+		![[Pasted image 20250121230732.png]]
+	<span style="color:rgb(255, 0, 0)">git branch -a</span>  nos permite visualizar todas las ramas que tiene el proyecto:
+		![[Pasted image 20250121230926.png]]
+	<span style="color:rgb(255, 0, 0)">git checkout</span> + (nombre de la rama a la que se desea cambiar) se usa para cambiar entre las ramas que contiene un proyecto:
+		![[Pasted image 20250121232617.png]]
